@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Poppins";
+    --font-body: "Inter Variable";
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    overflow-x: clip;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-saffron-500 text-white;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-4;
+  }
+  .btn-primary {
+    @apply btn bg-saffron-500 text-white shadow-[0_10px_24px_-10px_rgba(242,106,15,0.8)] hover:-translate-y-0.5 hover:bg-saffron-600 focus-visible:ring-saffron-200;
+  }
+  .btn-navy {
+    @apply btn bg-navy-800 text-white hover:-translate-y-0.5 hover:bg-navy-900 focus-visible:ring-navy-200;
+  }
+  .btn-outline {
+    @apply btn border border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white focus-visible:ring-navy-200;
+  }
+  .field {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-slate-400 focus:border-navy-500 focus:ring-4 focus:ring-navy-100;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-saffron-500;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---------- Scroll reveal (see components/Reveal.tsx) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.65, 0.3, 1),
+    transform 0.9s cubic-bezier(0.2, 0.65, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal[data-variant="left"] {
+  transform: translate3d(-48px, 0, 0);
+}
+.reveal[data-variant="right"] {
+  transform: translate3d(48px, 0, 0);
+}
+.reveal[data-variant="zoom"] {
+  transform: scale(0.94);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Image hover zoom used on every card */
+.zoom-img img {
+  transition: transform 0.9s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+.group:hover .zoom-img img,
+.group.zoom-img:hover img {
+  transform: scale(1.08);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

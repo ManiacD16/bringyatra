@@ -1,0 +1,67 @@
+// Real travel photography served from Unsplash (free to use under the Unsplash License).
+// Swap any id below to change a photo site-wide.
+
+const unsplash = (id: string, w = 1200) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+
+const ids = {
+  kashmir: "1595815771614-ade9d652a65d",
+  kashmirBoats: "1715457573748-8e8a70b2c1be",
+  manali: "1597167231350-d057a45dc868",
+  manaliSnow: "1712388430474-ace0c16051e2",
+  shimla: "1597074866923-dc0589150358",
+  goa: "1512343879784-a960bf40e7f2",
+  goaHuts: "1614082242765-7c98ca0f3df3",
+  goaUmbrellas: "1560179406-1c6c60e0dc76",
+  konarkWheel: "1639980290886-6bdd61c7582b",
+  konark: "1601815264039-67c8ba1a7f98",
+  puri: "1706790574525-d218c4c52b5c",
+  chilika: "1718696070531-7c34bee582db",
+  bhubaneswar: "1706465416840-85482d841da7",
+  lingaraj: "1707241934268-5a0c8e206d9c",
+  odishaBeach: "1638441173566-fc4ca312d0f8",
+  kerala: "1602216056096-3b40cc0c9944",
+  keralaHouseboat: "1593693411515-c20261bcad6e",
+  munnar: "1491497895121-1334fc14d8c9",
+  jaipur: "1477587458883-47145ed94245",
+  jaipurFort: "1603262110263-fb0112e7cc33",
+  udaipur: "1589901164570-f9de6556e1c1",
+  taj: "1564507592333-c60657eea523",
+  tajGolden: "1587135941948-670b381f08ce",
+  ladakh: "1581793745862-99fde7fa73d2",
+  ladakhLake: "1600438831035-48f5f196d3bf",
+  varanasiAarti: "1599831069477-b2acdc0bcb91",
+  varanasi: "1706186839147-0d708602587b",
+  andaman: "1586359716568-3e1907e4cf9f",
+  amritsar: "1609947017136-9daf32a5eb16",
+  kedarnath: "1612438214708-f428a707dd4e",
+  rishikesh: "1720819029162-8500607ae232",
+  darjeeling: "1622308644420-b20142dc993c",
+  toyTrain: "1671711847762-b8308b444a42",
+  sikkim: "1590256518627-c9f8a6855185",
+  meghalaya: "1593813738953-fb3c93e0769d",
+  meghalayaFalls: "1609276804051-8c5e906cc430",
+  coorg: "1560357647-62a43d9897bb",
+  himalaya: "1608942025318-1191eeade556",
+  himalayaGreen: "1566375465495-f3ef2854592d",
+  himalayaValley: "1580248363369-c93af5a65315",
+  himalayaVillage: "1617159156637-dfb8655c9f95",
+  coupleMountain: "1529566321973-795c4f4138bb",
+  coupleLake: "1491582990992-68ec88e070a3",
+  family: "1639979511514-904e46c8c13f",
+  friends: "1630001722538-a9a540da549b",
+  familySea: "1776113193945-bc9f0d2d89b4",
+  honeymoon: "1701401942416-bea590efe2ad",
+  honeymoonDance: "1615966650071-855b15f29ad1",
+  group: "1780830158628-956986809f3e",
+  flight: "1558882423-bebedae70ea8",
+  flightWing: "1593182440709-4b7b56482c55",
+  resort: "1540541338287-41700207dee6",
+  resortPool: "1520250497591-112f2f40a3f4",
+  bus: "1771260262905-69d9989f180e",
+  hotelRoom: "1667403206415-0e51a54727d4",
+} as const;
+
+export type ImageKey = keyof typeof ids;
+
+export const img = (key: ImageKey, w = 1200) => unsplash(ids[key], w);
