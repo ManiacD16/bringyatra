@@ -28,6 +28,7 @@ import SectionHeading from "@/components/SectionHeading";
 import EnquiryButton from "@/components/EnquiryButton";
 import { blogs, byCategory, faqs, interests, packages, services, site, stats, testimonials, weekendCities, whyUs } from "@/lib/data";
 import { img } from "@/lib/images";
+import { themeHref } from "@/lib/themes";
 
 const trust = [
   { Icon: ShieldCheck, title: "Trusted Travel Brand", sub: "by BillBring" },
@@ -99,7 +100,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {interests.map((it, i) => (
               <Reveal key={it.slug} delay={i * 70} variant="zoom">
-                <Link href={`/tour-packages?category=${it.slug}`} className="group block rounded-2xl bg-white p-3 shadow-card transition hover:-translate-y-1 hover:shadow-lift">
+                <Link href={themeHref(it.slug)} className="group block rounded-2xl bg-white p-3 shadow-card transition hover:-translate-y-1 hover:shadow-lift">
                   <div className="flex items-start justify-between px-1 pb-2.5">
                     <div>
                       <h3 className="text-[15px] font-semibold text-ink">{it.label}</h3>

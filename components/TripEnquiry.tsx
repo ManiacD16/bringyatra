@@ -102,14 +102,14 @@ function Chips({ options, value, onToggle, multi }: { options: string[]; value: 
   );
 }
 
-export function TripEnquiryForm({ variant }: { variant: EnquiryVariant }) {
+export function TripEnquiryForm({ variant, defaultType }: { variant: EnquiryVariant; defaultType?: string }) {
   const cfg = configs[variant];
   const { user } = useAuth();
   const [f, setF] = useState({
     name: "", phone: "", email: "", city: "", date: "", duration: "", adults: "2", children: "0",
     budget: "", hotel: "Standard / 3★", destination: "", groupType: "", groupSize: "", message: "",
   });
-  const [chips, setChips] = useState<string[]>([]);
+  const [chips, setChips] = useState<string[]>(defaultType ? [defaultType] : []);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [busy, setBusy] = useState(false);
   const [ref, setRef] = useState<string | null>(null);
@@ -160,7 +160,7 @@ export function TripEnquiryForm({ variant }: { variant: EnquiryVariant }) {
           className="btn-outline mt-6"
           onClick={() => {
             setRef(null);
-            setChips([]);
+            setChips(defaultType ? [defaultType] : []);
           }}
         >
           Send another enquiry
@@ -303,7 +303,7 @@ export function TripEnquiryForm({ variant }: { variant: EnquiryVariant }) {
 }
 
 /** Full-width enquiry section: photo + highlights on the left, the form on the right. */
-export default function TripEnquirySection({ variant }: { variant: EnquiryVariant }) {
+export default function TripEnquirySection({ variant, defaultType }: { variant: EnquiryVariant; defaultType?: string }) {
   const cfg = configs[variant];
   return (
     <section id="enquire" className="scroll-mt-24 py-16 sm:py-20">
@@ -330,7 +330,7 @@ export default function TripEnquirySection({ variant }: { variant: EnquiryVarian
             </div>
           </Reveal>
           <div className="p-6 sm:p-9">
-            <TripEnquiryForm variant={variant} />
+            <TripEnquiryForm variant={variant} defaultType={defaultType} />
           </div>
         </div>
       </div>

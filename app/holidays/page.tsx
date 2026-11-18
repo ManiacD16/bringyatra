@@ -10,6 +10,7 @@ import PackageCard from "@/components/PackageCard";
 import TripEnquirySection from "@/components/TripEnquiry";
 import { byCategory, interests, services } from "@/lib/data";
 import { img } from "@/lib/images";
+import { themeHref } from "@/lib/themes";
 
 export const metadata: Metadata = {
   title: "Holidays by Theme",
@@ -53,7 +54,7 @@ export default function HolidaysPage() {
       {interests.slice(0, 4).map((it, idx) => (
         <section key={it.slug} className={`py-14 ${idx % 2 === 0 ? "bg-slate-50" : ""}`}>
           <div className="container">
-            <SectionHeading title={it.label} highlight="Packages" link={{ href: `/tour-packages?category=${it.slug}`, label: "View all" }} />
+            <SectionHeading title={it.label} highlight="Packages" link={{ href: themeHref(it.slug), label: "View all" }} />
             <Reveal>
               <Carousel>
                 {byCategory(it.slug).map((p) => (

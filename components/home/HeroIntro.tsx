@@ -6,7 +6,7 @@ import { site } from "@/lib/data";
 const services = [
   { label: "Tour Packages", sub: "350+ itineraries", href: "/tour-packages", Icon: Mountain },
   { label: "Holidays", sub: "Family & honeymoon", href: "/holidays", Icon: Palmtree },
-  { label: "Pilgrimage Tours", sub: "Char Dham, Puri & more", href: "/tour-packages?category=pilgrimage", Icon: Landmark },
+  { label: "Pilgrimage Tours", sub: "Char Dham, Puri & more", href: "/holidays/pilgrimage", Icon: Landmark },
   { label: "Group Tours", sub: "10 to 500+ travellers", href: "/group-tours", Icon: Users },
   { label: "Flight Booking", sub: "Best domestic fares", href: "/flights", Icon: Plane },
   { label: "Bus & Hotels", sub: "Volvo, sleeper & stays", href: "/hotels", Icon: BedDouble },

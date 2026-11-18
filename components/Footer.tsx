@@ -22,9 +22,9 @@ const cols = [
     links: [
       { label: "Domestic Tour Packages", href: "/tour-packages" },
       { label: "Weekend Getaways", href: "/weekend-getaways" },
-      { label: "Family Holidays", href: "/tour-packages?category=family" },
-      { label: "Honeymoon Packages", href: "/tour-packages?category=honeymoon" },
-      { label: "Pilgrimage Tours", href: "/tour-packages?category=pilgrimage" },
+      { label: "Family Holidays", href: "/holidays/family" },
+      { label: "Honeymoon Packages", href: "/holidays/honeymoon" },
+      { label: "Pilgrimage Tours", href: "/holidays/pilgrimage" },
       { label: "Customized Group Tours", href: "/group-tours" },
       { label: "Odisha Special Tours", href: "/odisha-tours" },
     ],

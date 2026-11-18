@@ -90,6 +90,8 @@ export default function Header() {
   const [mobile, setMobile] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
   const { user, logout } = useAuth();
+  // Hover menus are CSS-driven; after a click we force the open one shut until the pointer leaves it.
+  const [closedMenu, setClosedMenu] = useState<string | null>(null);
 
   // Sticky header: compacts after scrolling, slides away on scroll-down, returns on scroll-up.
   useEffect(() => {
@@ -125,9 +127,10 @@ export default function Header() {
 
           <nav className="hidden h-full items-center xl:flex" aria-label="Main">
             {nav.map((item) => (
-              <div key={item.label} className="group relative flex h-full items-center">
+              <div key={item.label} className="group relative flex h-full items-center" onMouseLeave={() => setClosedMenu(null)}>
                 <Link
                   href={item.href}
+                  onClick={() => setClosedMenu(item.label)}
                   className={`relative flex items-center gap-1 whitespace-nowrap px-3 py-2 text-[15px] font-medium transition-colors hover:text-navy-600 ${
                     isActive(item.href) ? "text-navy-600" : "text-ink"
                   }`}
@@ -141,7 +144,11 @@ export default function Header() {
                   />
                 </Link>
                 {item.mega && (
-                  <div className="invisible absolute left-1/2 top-full -translate-x-1/2 translate-y-3 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div
+                    className={`invisible absolute left-1/2 top-full -translate-x-1/2 translate-y-3 opacity-0 transition-all duration-300 ${
+                      closedMenu === item.label ? "" : "group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+                    }`}
+                  >
                     <div className="flex gap-10 rounded-2xl border border-slate-100 bg-white p-7 shadow-lift">
                       {item.mega.map((col) => (
                         <div key={col.heading} className="min-w-[190px]">
@@ -149,7 +156,7 @@ export default function Header() {
                           <ul className="space-y-2">
                             {col.links.map((l) => (
                               <li key={l.label}>
-                                <Link href={l.href} className="text-sm text-slate-700 transition hover:pl-1 hover:text-navy-600">
+                                <Link href={l.href} onClick={() => setClosedMenu(item.label)} className="text-sm text-slate-700 transition hover:pl-1 hover:text-navy-600">
                                   {l.label}
                                 </Link>
                               </li>
@@ -189,7 +196,7 @@ export default function Header() {
             {nav.map((item) => (
               <div key={item.label} className="border-b border-slate-100 last:border-0">
                 <div className="flex items-center justify-between">
-                  <Link href={item.href} className={`block py-3 font-medium ${isActive(item.href) ? "text-navy-600" : "text-ink"}`}>
+                  <Link href={item.href} onClick={() => setMobile(false)} className={`block py-3 font-medium ${isActive(item.href) ? "text-navy-600" : "text-ink"}`}>
                     {item.label}
                   </Link>
                   {item.mega && (
@@ -208,7 +215,7 @@ export default function Header() {
                       <div key={col.heading}>
                         <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-saffron-500">{col.heading}</p>
                         {col.links.map((l) => (
-                          <Link key={l.label} href={l.href} className="block py-1.5 text-sm text-slate-700">
+                          <Link key={l.label} href={l.href} onClick={() => setMobile(false)} className="block py-1.5 text-sm text-slate-700">
                             {l.label}
                           </Link>
                         ))}

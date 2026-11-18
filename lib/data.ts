@@ -64,7 +64,7 @@ export const services: Service[] = [
     short: "Family Holidays",
     blurb: "Easy-paced itineraries with family rooms, child-friendly activities and private cabs.",
     image: "family",
-    href: "/tour-packages?category=family",
+    href: "/holidays/family",
     count: "60+",
   },
   {
@@ -73,7 +73,7 @@ export const services: Service[] = [
     short: "Honeymoon",
     blurb: "Candlelight dinners, private houseboats and room upgrades for the start of your forever.",
     image: "honeymoon",
-    href: "/tour-packages?category=honeymoon",
+    href: "/holidays/honeymoon",
     count: "40+",
   },
   {
@@ -82,7 +82,7 @@ export const services: Service[] = [
     short: "Pilgrimage Tours",
     blurb: "Char Dham, Jagannath Puri, Kashi, the Golden Temple and more, with darshan assistance and comfortable stays.",
     image: "varanasiAarti",
-    href: "/tour-packages?category=pilgrimage",
+    href: "/holidays/pilgrimage",
     count: "55+",
   },
   {
@@ -716,19 +716,19 @@ export const nav: NavItem[] = [
       {
         heading: "Holidays by Theme",
         links: [
-          { label: "Family Holidays", href: "/tour-packages?category=family" },
-          { label: "Honeymoon Packages", href: "/tour-packages?category=honeymoon" },
-          { label: "Religious & Pilgrimage", href: "/tour-packages?category=pilgrimage" },
+          { label: "Family Holidays", href: "/holidays/family" },
+          { label: "Honeymoon Packages", href: "/holidays/honeymoon" },
+          { label: "Religious & Pilgrimage", href: "/holidays/pilgrimage" },
           { label: "Weekend Getaways", href: "/weekend-getaways" },
         ],
       },
       {
         heading: "By Interest",
         links: [
-          { label: "Hill Stations", href: "/tour-packages?category=hill-station" },
-          { label: "Beach Holidays", href: "/tour-packages?category=beach" },
-          { label: "Heritage Tours", href: "/tour-packages?category=heritage" },
-          { label: "Adventure Tours", href: "/tour-packages?category=adventure" },
+          { label: "Hill Stations", href: "/holidays/hill-station" },
+          { label: "Beach Holidays", href: "/holidays/beach" },
+          { label: "Heritage Tours", href: "/holidays/heritage" },
+          { label: "Adventure Tours", href: "/holidays/adventure" },
           { label: "Enquire for a Holiday", href: "/holidays#enquire" },
         ],
       },
