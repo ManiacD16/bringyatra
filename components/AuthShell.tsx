@@ -35,11 +35,7 @@ export default function AuthShell({ title, subtitle, image, children }: { title:
           <div className="p-6 sm:p-10">
             <h1 className="text-3xl font-bold text-ink">{title}</h1>
             <p className="mt-1.5 text-sm text-slate-600">{subtitle}</p>
-            <p className="mt-5 flex items-start gap-2 rounded-xl bg-amber-50 px-4 py-3 text-xs text-amber-900">
-              <Info size={16} className="mt-px shrink-0" />
-              Demo mode: accounts are stored only in this browser and nothing is sent to a server. Don&apos;t use a real password.
-            </p>
-            <div className="mt-6">{children}</div>
+              <div className="mt-6">{children}</div>
           </div>
         </div>
       </div>

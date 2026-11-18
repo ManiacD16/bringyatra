@@ -164,7 +164,8 @@ export function ForgotForm() {
         <CheckCircle2 size={52} className="text-emerald-500" />
         <h2 className="mt-4 text-xl font-semibold text-ink">Check your inbox</h2>
         <p className="mt-2 max-w-sm text-sm text-slate-600">
-          If an account exists for <span className="font-medium text-ink">{email}</span>, a reset link would be sent. (Demo mode: no email is actually sent.)
+          If an account exists for <span className="font-medium text-ink">{email}</span>, a reset link would be sent. 
+          {/* (Demo mode: no email is actually sent.) */}
         </p>
         <Link href="/login" className="btn-navy mt-6">Back to Login</Link>
       </div>

@@ -155,7 +155,7 @@ export function TripEnquiryForm({ variant, defaultType }: { variant: EnquiryVari
           Thank you, {f.name.split(" ")[0]}. Your reference number is <span className="font-semibold text-ink">{ref}</span>. Our travel expert will call you on{" "}
           <span className="font-semibold text-ink">{f.phone}</span> shortly.
         </p>
-        <p className="mt-1 text-xs text-slate-500">(Demo website: no data has been sent.)</p>
+        {/* <p className="mt-1 text-xs text-slate-500">(Demo website: no data has been sent.)</p> */}
         <button
           className="btn-outline mt-6"
           onClick={() => {

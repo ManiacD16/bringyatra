@@ -29,15 +29,15 @@ const cols = [
       { label: "Odisha Special Tours", href: "/odisha-tours" },
     ],
   },
-  {
-    title: "Bookings",
-    links: [
-      { label: "Flight Booking", href: "/flights" },
-      { label: "Bus Booking", href: "/buses" },
-      { label: "Hotel Booking", href: "/hotels" },
-      { label: "Holiday Packages", href: "/holidays" },
-    ],
-  },
+  // {
+  //   title: "Bookings",
+  //   links: [
+  //     { label: "Flight Booking", href: "/flights" },
+  //     { label: "Bus Booking", href: "/buses" },
+  //     { label: "Hotel Booking", href: "/hotels" },
+  //     { label: "Holiday Packages", href: "/holidays" },
+  //   ],
+  // },
   {
     title: "Top Packages",
     links: packages.slice(0, 7).map((p) => ({ label: p.title, href: `/tour-packages/${p.slug}` })),

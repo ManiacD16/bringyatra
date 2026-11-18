@@ -105,7 +105,7 @@ export default function PackageEnquiryModal({ pkg, onClose }: { pkg: Pkg; onClos
                 Thanks, {f.name.split(" ")[0]}. Your reference for <span className="font-semibold text-ink">{pkg.title}</span> is{" "}
                 <span className="font-semibold text-ink">{ref}</span>. Our travel expert will call you on <span className="font-semibold text-ink">{f.phone}</span> to confirm dates and price.
               </p>
-              <p className="mt-1 text-xs text-slate-500">(Demo website: no data has been sent.)</p>
+              {/* <p className="mt-1 text-xs text-slate-500">(Demo website: no data has been sent.)</p> */}
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <Link href={`/tour-packages/${pkg.slug}`} onClick={onClose} className="btn-navy">View Itinerary</Link>
                 <button onClick={onClose} className="btn-outline">Close</button>
