@@ -43,11 +43,11 @@ npm start
 - **Photos:** `lib/images.ts` (one id per photo; change an id to swap that photo site-wide)
 - **Brand colours:** `tailwind.config.ts` (`navy`, `saffron`, `teal`, `amber`, sampled from the logo)
 - **Logo / icon:** `public/images/logo.png`, `public/images/icon.png`, favicon `app/icon.png`. The original SVGs are in `brand/`.
-- **Phone / email / address:** `site` in `lib/data.ts`
+- **Customer care number, email, legal name and registered address:** `site` in `lib/data.ts` (used by the header, footer, floating call button and Contact page)
 
 ## Design notes
 
 - **Fonts:** Poppins (headings) and Inter (body), self-hosted via `@fontsource`, so the build needs no network access for fonts.
 - **Scroll behaviour** follows tourmyindia.com: smooth scrolling, slide-by-one carousels with round arrow buttons, a fixed bottom quick-links bar, and floating Call / Plan Your Trip buttons. On top of that, sections fade and slide in as you scroll (`components/Reveal.tsx`), counters count up, the hero uses a Ken Burns zoom, and the header hides on scroll-down and returns on scroll-up. All motion respects `prefers-reduced-motion`.
 - **Photos** are real travel photos from [Unsplash](https://unsplash.com), free to use under the Unsplash License, served through `next/image`. For production you may want to replace them with your own trip photos.
-- Testimonials, blog posts, offers, prices, phone number and address are placeholder content. Replace them before going live.
+- Testimonials, blog posts, offers, prices and stats are placeholder content. Replace them before going live.

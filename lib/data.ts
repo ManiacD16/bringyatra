@@ -3,11 +3,13 @@ import { img, type ImageKey } from "./images";
 export const site = {
   name: "BringYatra",
   tagline: "Bringing Journeys to Life.",
-  phone: "+91 91234 56789",
-  whatsapp: "+91 91234 56789",
+  /** Customer care number, as displayed. */
+  phone: "+91 87968 83271",
+  /** Same number for tel: links. */
+  tel: "+918796883271",
   email: "support@bringyatra.com",
-  address: "Plot 42, Saheed Nagar, Bhubaneswar, Odisha 751007",
-  hours: "Mon – Sun · 8:00 AM – 10:00 PM",
+  legalName: "Billbring Payment Solution Pvt Ltd",
+  address: "Unit No. 141-142, First Floor, Tower-B3, Spaze Itech Park, Sohna Road, Sector 49, Gurugram, Haryana 122018",
 };
 
 /* ------------------------------------------------------------------ */

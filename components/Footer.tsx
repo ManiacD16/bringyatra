@@ -75,12 +75,28 @@ export default function Footer() {
         <div>
           <Logo light />
           <p className="mt-5 max-w-xs text-sm leading-relaxed">
-            BringYatra is an Odisha-born travel company crafting domestic holidays, pilgrimages, honeymoons and group tours across India, so every journey comes to life.
+            BringYatra crafts domestic holidays, pilgrimages, honeymoons, Odisha specials and group tours across India, so every journey comes to life.
           </p>
           <ul className="mt-6 space-y-3 text-sm">
-            <li className="flex gap-3"><MapPin size={18} className="mt-0.5 shrink-0 text-saffron-400" />{site.address}</li>
-            <li className="flex gap-3"><Phone size={18} className="shrink-0 text-saffron-400" />{site.phone}</li>
-            <li className="flex gap-3"><Mail size={18} className="shrink-0 text-saffron-400" />{site.email}</li>
+            <li className="flex gap-3">
+              <MapPin size={18} className="mt-0.5 shrink-0 text-saffron-400" />
+              <span>
+                <span className="block font-medium text-white">{site.legalName}</span>
+                {site.address}
+              </span>
+            </li>
+            <li>
+              <a href={`tel:${site.tel}`} className="flex gap-3 hover:text-saffron-400">
+                <Phone size={18} className="shrink-0 text-saffron-400" />
+                Customer Care: {site.phone}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${site.email}`} className="flex gap-3 hover:text-saffron-400">
+                <Mail size={18} className="shrink-0 text-saffron-400" />
+                {site.email}
+              </a>
+            </li>
           </ul>
           <div className="mt-6 flex gap-2.5">
             {socials.map(({ Icon, label }) => (
@@ -106,7 +122,9 @@ export default function Footer() {
       </div>
 
       <div className="container relative flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row">
-        <p>© {new Date().getFullYear()} BringYatra Travels Pvt. Ltd. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} {site.legalName}. BringYatra is a brand of {site.legalName}. All rights reserved.
+        </p>
         <div className="flex gap-5">
           <a href="#" className="hover:text-white">Terms &amp; Conditions</a>
           <a href="#" className="hover:text-white">Privacy Policy</a>

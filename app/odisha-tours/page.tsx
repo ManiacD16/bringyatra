@@ -40,7 +40,7 @@ export default function OdishaPage() {
         image={img("konarkWheel", 2000)}
         crumbs={[{ label: "Odisha Special" }]}
         title={<>Odisha Special <span className="text-amber-400">Tour Packages</span></>}
-        subtitle="Temples, tides, tribes and timeless crafts, from a travel company that calls Odisha home."
+        subtitle="Temples, tides, tribes and timeless crafts, planned with local experts who know Odisha inside out."
       >
         <div className="mt-7 flex flex-wrap gap-3">
           <a href="#packages" className="btn-primary">View Packages</a>

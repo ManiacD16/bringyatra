@@ -36,7 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <EnquiryProvider>
           <Header />
-          <main>{children}</main>
+          {/* overflow-x-clip (not hidden) keeps off-screen reveal animations from causing sideways scroll without breaking position: sticky */}
+          <main className="overflow-x-clip">{children}</main>
           <Footer />
           <StickyBar />
         </EnquiryProvider>

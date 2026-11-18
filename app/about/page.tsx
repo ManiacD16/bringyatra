@@ -5,12 +5,12 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import Counter from "@/components/home/Counter";
-import { stats, testimonials } from "@/lib/data";
+import { site, stats, testimonials } from "@/lib/data";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "BringYatra is an Odisha-born travel company: Bringing Journeys to Life since 2014.",
+  description: "BringYatra, a brand of Billbring Payment Solution Pvt Ltd: Bringing Journeys to Life.",
 };
 
 const values = [
@@ -26,7 +26,7 @@ export default function AboutPage() {
         image={img("himalayaVillage", 2000)}
         crumbs={[{ label: "About Us" }]}
         title={<>Bringing Journeys <span className="text-amber-400">to Life</span></>}
-        subtitle="The story of BringYatra, from a small desk in Bhubaneswar to 25,000+ happy travellers."
+        subtitle="Meet BringYatra, the travel brand of Billbring Payment Solution Pvt Ltd, trusted by 25,000+ travellers."
       />
 
       <section className="py-16 sm:py-20">
@@ -37,17 +37,17 @@ export default function AboutPage() {
             </div>
             <div className="absolute -bottom-6 right-4 hidden w-40 rounded-2xl bg-white p-3 shadow-lift sm:block">
               <Image src="/images/icon.png" alt="BringYatra icon" width={458} height={512} className="mx-auto h-auto w-20" />
-              <p className="mt-1 text-center text-xs font-semibold text-navy-800">Since 2014</p>
+              <p className="mt-1 text-center text-xs font-semibold text-navy-800">by BillBring</p>
             </div>
           </Reveal>
           <div>
-            <SectionHeading eyebrow="Who we are" title="An Odisha-born" highlight="Travel Company" />
+            <SectionHeading eyebrow="Who we are" title="Travel, Made" highlight="Simple & Joyful" />
             <Reveal className="space-y-4 text-slate-600">
               <p>
-                BringYatra started in Bhubaneswar with one belief: every journey should be as joyful as the destination. What began as Puri and Konark trips for friends and family is now a full-service travel company covering 120+ destinations across India.
+                BringYatra is the travel brand of {site.legalName}, built on one belief: every journey should be as joyful as the destination. We are a full-service travel company covering 120+ destinations across India.
               </p>
               <p>
-                Today our team of 60+ travel experts plans domestic tour packages, weekend getaways, family and honeymoon holidays, religious and pilgrimage tours, and customized group tours, along with flight, bus and hotel bookings. Odisha is still our home, and our Odisha special packages are designed by people who grew up here.
+                Today our team of 60+ travel experts plans domestic tour packages, weekend getaways, family and honeymoon holidays, religious and pilgrimage tours, and customized group tours, along with flight, bus and hotel bookings. Odisha is our speciality, and our Odisha special packages are designed with local experts on the ground.
               </p>
             </Reveal>
           </div>

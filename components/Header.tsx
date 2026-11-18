@@ -15,7 +15,7 @@ function TopBar() {
           <span className="font-semibold text-saffron-500">Winter Sale is live:</span> up to 25% off on Kashmir, Kerala &amp; Odisha tours
         </p>
         <div className="flex items-center gap-5">
-          <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="flex items-center gap-1.5 hover:text-navy-600">
+          <a href={`tel:${site.tel}`} className="flex items-center gap-1.5 hover:text-navy-600">
             <Phone size={14} /> {site.phone}
           </a>
           <a href={`mailto:${site.email}`} className="flex items-center gap-1.5 hover:text-navy-600">

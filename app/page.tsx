@@ -26,11 +26,11 @@ import PackageCard from "@/components/PackageCard";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import EnquiryButton from "@/components/EnquiryButton";
-import { blogs, byCategory, faqs, interests, packages, services, stats, testimonials, weekendCities, whyUs } from "@/lib/data";
+import { blogs, byCategory, faqs, interests, packages, services, site, stats, testimonials, weekendCities, whyUs } from "@/lib/data";
 import { img } from "@/lib/images";
 
 const trust = [
-  { Icon: ShieldCheck, title: "Trusted Travel Brand", sub: "25,000+ happy travellers" },
+  { Icon: ShieldCheck, title: "Trusted Travel Brand", sub: "by BillBring" },
   { Icon: Headset, title: "24×7", sub: "Customer Support" },
   { Icon: BadgeIndianRupee, title: "Best Price", sub: "Guaranteed" },
   { Icon: CreditCard, title: "Secure & Easy", sub: "Payments" },
@@ -87,7 +87,7 @@ export default function HomePage() {
               Let us plan you a perfect <span className="font-bold text-saffron-500">India Holiday</span>
             </h2>
             <p className="mt-5 text-slate-600">
-              BringYatra is a full-service travel company from Odisha. We craft tour packages around how you like to travel, from a two-day weekend break to a two-week Char Dham yatra. Our experts hand-pick every hotel, cab and experience, so all you pack is excitement.
+              BringYatra is a full-service travel company. We craft tour packages around how you like to travel, from a two-day weekend break to a two-week Char Dham yatra. Our experts hand-pick every hotel, cab and experience, so all you pack is excitement.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/tour-packages" className="btn-navy">
@@ -160,12 +160,12 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900/95 to-navy-900/60" />
         <div className="container relative grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:items-center">
           <Reveal variant="left" className="min-w-0">
-            <p className="eyebrow text-amber-400">Odisha Special · Our home turf</p>
+            <p className="eyebrow text-amber-400">Odisha Special · Our speciality</p>
             <h2 className="mt-3 text-4xl font-bold leading-tight sm:text-5xl">
               Discover the Soul of <span className="text-saffron-400">Odisha</span>
             </h2>
             <p className="mt-5 text-white/80">
-              Jagannath Dham in Puri, the Sun Temple of Konark, Asia&apos;s largest brackish-water lagoon at Chilika and the 700-temple city of Bhubaneswar. Our local experts know every lane, festival and hidden beach.
+              Jagannath Dham in Puri, the Sun Temple of Konark, Asia&apos;s largest brackish-water lagoon at Chilika and the 700-temple city of Bhubaneswar. Our local experts on the ground know every lane, festival and hidden beach.
             </p>
             <ul className="mt-6 grid grid-cols-2 gap-3 text-sm">
               {["Rath Yatra specials", "Temple darshan help", "Chilika dolphin safari", "Tribal & craft villages"].map((x) => (
@@ -415,7 +415,10 @@ export default function HomePage() {
               <h3 className="mt-3 text-3xl font-bold leading-tight">It&apos;s time for new experiences.</h3>
               <p className="mt-3 text-white/80">Tell us where you want to go. Our experts will design a day-by-day plan and a transparent quote, free of charge.</p>
               <EnquiryButton className="btn-primary mt-7 w-full">Plan My Trip</EnquiryButton>
-              <p className="mt-4 text-center text-sm text-white/70">or call us 24×7 on <span className="font-semibold text-white">+91 91234 56789</span></p>
+              <p className="mt-4 text-center text-sm text-white/70">or call Customer Care on{" "}
+                <a href={`tel:${site.tel}`} className="font-semibold text-white hover:text-amber-400">
+                  {site.phone}
+                </a></p>
             </div>
           </Reveal>
         </div>

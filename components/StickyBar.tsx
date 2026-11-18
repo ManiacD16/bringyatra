@@ -46,7 +46,7 @@ export default function StickyBar() {
           <ArrowUp size={18} />
         </button>
         <a
-          href={`tel:${site.phone.replace(/\s/g, "")}`}
+          href={`tel:${site.tel}`}
           className="hidden items-center gap-2 rounded-full border border-saffron-500 bg-white px-4 py-2.5 text-sm font-semibold text-saffron-600 shadow-lg md:flex"
         >
           <Phone size={16} /> {site.phone}
