@@ -7,6 +7,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import Carousel from "@/components/Carousel";
 import PackageCard from "@/components/PackageCard";
+import TripEnquirySection from "@/components/TripEnquiry";
 import { byCategory, interests, services } from "@/lib/data";
 import { img } from "@/lib/images";
 
@@ -63,6 +64,8 @@ export default function HolidaysPage() {
           </div>
         </section>
       ))}
+
+      <TripEnquirySection variant="holiday" />
     </>
   );
 }

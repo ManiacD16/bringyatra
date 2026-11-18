@@ -5,9 +5,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, CalendarDays, Heart, MapPin, Star } from "lucide-react";
 import { discount, inr, packageImage, type Pkg } from "@/lib/data";
+import { useEnquiry } from "./Enquiry";
 
 export default function PackageCard({ pkg }: { pkg: Pkg }) {
   const [liked, setLiked] = useState(false);
+  const { openPackage } = useEnquiry();
   const href = `/tour-packages/${pkg.slug}`;
 
   return (
@@ -61,9 +63,15 @@ export default function PackageCard({ pkg }: { pkg: Pkg }) {
           <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
             {discount(pkg)}% OFF
           </span>
-          <span className="relative ml-auto grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-navy-700 transition group-hover:border-saffron-500 group-hover:bg-saffron-500 group-hover:text-white">
+          <button
+            type="button"
+            onClick={() => openPackage(pkg.slug)}
+            aria-label={`Book ${pkg.title}`}
+            title="Book this package"
+            className="relative z-10 ml-auto grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-navy-700 transition hover:scale-110 group-hover:border-saffron-500 group-hover:bg-saffron-500 group-hover:text-white"
+          >
             <ArrowRight size={16} />
-          </span>
+          </button>
         </div>
       </div>
     </article>

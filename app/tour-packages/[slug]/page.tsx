@@ -51,7 +51,7 @@ export default async function PackageDetail({ params }: Params) {
       <PageHero
         tall
         image={img(p.image, 2000)}
-        crumbs={[{ label: "Tour Packages", href: "/tour-packages" }, { label: p.title }]}
+        crumbs={[{ label: "Domestic Tours", href: "/tour-packages" }, { label: p.title }]}
         title={p.title}
         subtitle={p.subtitle}
       >
@@ -153,7 +153,7 @@ export default async function PackageDetail({ params }: Params) {
               </div>
               <p className="mt-1 text-xs text-slate-500">per person on twin sharing</p>
               <span className="mt-3 inline-block rounded-lg bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">You save {discount(p)}% · {inr(p.oldPrice - p.price)}</span>
-              <EnquiryButton subject={p.title} className="btn-primary mt-5 w-full py-3.5 text-base">Book Now</EnquiryButton>
+              <EnquiryButton packageSlug={p.slug} className="btn-primary mt-5 w-full py-3.5 text-base">Book Now</EnquiryButton>
               <p className="mt-3 flex items-center justify-center gap-1.5 text-xs text-slate-500">
                 <ShieldCheck size={14} className="text-teal-600" /> Pay just 25% to confirm ·{" "}
                 <Link href="/legal/cancellation-policy" className="underline decoration-dotted hover:text-navy-600">Cancellation policy</Link>

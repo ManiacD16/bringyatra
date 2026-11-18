@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 import PackageCard from "@/components/PackageCard";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import EnquiryButton from "@/components/EnquiryButton";
+import TripEnquirySection from "@/components/TripEnquiry";
 import { byCategory } from "@/lib/data";
 import { img, type ImageKey } from "@/lib/images";
 
@@ -44,7 +44,7 @@ export default function OdishaPage() {
       >
         <div className="mt-7 flex flex-wrap gap-3">
           <a href="#packages" className="btn-primary">View Packages</a>
-          <EnquiryButton subject="Odisha tour" className="btn border border-white/40 text-white hover:bg-white hover:text-navy-900">Customise an Odisha Trip</EnquiryButton>
+          <a href="#enquire" className="btn border border-white/40 text-white hover:bg-white hover:text-navy-900">Customise an Odisha Trip</a>
         </div>
       </PageHero>
 
@@ -105,6 +105,8 @@ export default function OdishaPage() {
           </div>
         </div>
       </section>
+
+      <TripEnquirySection variant="odisha" />
     </>
   );
 }

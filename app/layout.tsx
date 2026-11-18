@@ -10,6 +10,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyBar from "@/components/StickyBar";
 import { EnquiryProvider } from "@/components/Enquiry";
+import { AuthProvider } from "@/components/Auth";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bringyatra.com"),
@@ -34,13 +35,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <EnquiryProvider>
-          <Header />
-          {/* overflow-x-clip (not hidden) keeps off-screen reveal animations from causing sideways scroll without breaking position: sticky */}
-          <main className="overflow-x-clip">{children}</main>
-          <Footer />
-          <StickyBar />
-        </EnquiryProvider>
+        <AuthProvider>
+          <EnquiryProvider>
+            <Header />
+            {/* overflow-x-clip (not hidden) keeps off-screen reveal animations from causing sideways scroll without breaking position: sticky */}
+            <main className="overflow-x-clip">{children}</main>
+            <Footer />
+            <StickyBar />
+          </EnquiryProvider>
+        </AuthProvider>
       </body>
     </html>
   );

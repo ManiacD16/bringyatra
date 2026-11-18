@@ -4,20 +4,33 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 import Image from "next/image";
 import { CheckCircle2, X } from "lucide-react";
 import { img } from "@/lib/images";
+import { getPackage } from "@/lib/data";
+import PackageEnquiryModal from "./PackageEnquiry";
 
-type Ctx = { open: (subject?: string) => void };
-const EnquiryContext = createContext<Ctx>({ open: () => {} });
+type Ctx = {
+  /** General "plan my trip" popup, optionally pre-filled with a subject. */
+  open: (subject?: string) => void;
+  /** Booking popup for one specific tour package. */
+  openPackage: (slug: string) => void;
+};
+const EnquiryContext = createContext<Ctx>({ open: () => {}, openPackage: () => {} });
 
 export const useEnquiry = () => useContext(EnquiryContext);
 
 export function EnquiryProvider({ children }: { children: ReactNode }) {
   const [subject, setSubject] = useState<string | null>(null);
+  const [pkgSlug, setPkgSlug] = useState<string | null>(null);
   const open = useCallback((s?: string) => setSubject(s ?? "Plan my trip"), []);
+  const openPackage = useCallback((slug: string) => setPkgSlug(slug), []);
+  const closeSubject = useCallback(() => setSubject(null), []);
+  const closePackage = useCallback(() => setPkgSlug(null), []);
+  const pkg = pkgSlug ? getPackage(pkgSlug) : undefined;
 
   return (
-    <EnquiryContext.Provider value={{ open }}>
+    <EnquiryContext.Provider value={{ open, openPackage }}>
       {children}
-      {subject !== null && <EnquiryModal subject={subject} onClose={() => setSubject(null)} />}
+      {subject !== null && <EnquiryModal subject={subject} onClose={closeSubject} />}
+      {pkg && <PackageEnquiryModal key={pkg.slug} pkg={pkg} onClose={closePackage} />}
     </EnquiryContext.Provider>
   );
 }

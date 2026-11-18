@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ChevronDown, Heart, Mail, Menu, Phone, Smartphone, User, X } from "lucide-react";
+import { ChevronDown, Heart, LogOut, Mail, Menu, Phone, User, UserRound, X } from "lucide-react";
+import { useAuth } from "./Auth";
 import Logo from "./Logo";
 import { nav, site } from "@/lib/data";
 
@@ -21,12 +22,63 @@ function TopBar() {
           <a href={`mailto:${site.email}`} className="flex items-center gap-1.5 hover:text-navy-600">
             <Mail size={14} /> {site.email}
           </a>
-          <span className="h-4 w-px bg-slate-300" />
-          <span className="flex items-center gap-1.5">
-            <Smartphone size={14} /> Download App
-          </span>
         </div>
       </div>
+    </div>
+  );
+}
+
+/** Login / Sign Up button, or the signed-in user's menu (demo auth). */
+function AccountButton() {
+  const { user, ready, logout } = useAuth();
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => setOpen(false), [pathname]);
+
+  if (!ready) return <span className="hidden h-[46px] w-[170px] sm:block" />;
+
+  if (!user) {
+    return (
+      <Link
+        href="/login"
+        className="hidden items-center gap-2 whitespace-nowrap rounded-xl border-2 border-navy-700 px-4 py-2.5 text-sm font-semibold text-navy-700 transition hover:bg-navy-700 hover:text-white sm:flex"
+      >
+        <User size={18} /> Login / Sign Up
+      </Link>
+    );
+  }
+
+  const first = user.name.split(" ")[0];
+  return (
+    <div className="relative hidden sm:block" onMouseLeave={() => setOpen(false)}>
+      <button
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="flex items-center gap-2 rounded-xl border-2 border-navy-100 py-1.5 pl-1.5 pr-3 text-sm font-semibold text-navy-800 transition hover:border-navy-300"
+      >
+        <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-saffron-400 to-amber-500 font-display text-white">
+          {first[0]?.toUpperCase()}
+        </span>
+        Hi, {first}
+        <ChevronDown size={16} className={`transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full z-10 w-56 pt-2">
+          <div className="overflow-hidden rounded-2xl border border-slate-100 bg-white py-2 shadow-lift">
+            <p className="truncate px-4 pb-2 text-xs text-slate-500">{user.email}</p>
+            <Link href="/account" className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-ink hover:bg-navy-50">
+              <UserRound size={16} className="text-navy-600" /> My Account
+            </Link>
+            <Link href="/tour-packages" className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-ink hover:bg-navy-50">
+              <Heart size={16} className="text-navy-600" /> Wishlist
+            </Link>
+            <button onClick={logout} className="flex w-full items-center gap-2.5 border-t border-slate-100 px-4 py-2.5 text-left text-sm text-rose-600 hover:bg-rose-50">
+              <LogOut size={16} /> Logout
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -37,6 +89,7 @@ export default function Header() {
   const [hidden, setHidden] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
+  const { user, logout } = useAuth();
 
   // Sticky header: compacts after scrolling, slides away on scroll-down, returns on scroll-up.
   useEffect(() => {
@@ -70,19 +123,19 @@ export default function Header() {
         <div className={`container flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[68px]" : "h-[84px]"}`}>
           <Logo />
 
-          <nav className="hidden h-full items-center gap-1 xl:flex" aria-label="Main">
+          <nav className="hidden h-full items-center xl:flex" aria-label="Main">
             {nav.map((item) => (
               <div key={item.label} className="group relative flex h-full items-center">
                 <Link
                   href={item.href}
-                  className={`relative flex items-center gap-1 px-3.5 py-2 text-[15px] font-medium transition-colors hover:text-navy-600 ${
+                  className={`relative flex items-center gap-1 whitespace-nowrap px-3 py-2 text-[15px] font-medium transition-colors hover:text-navy-600 ${
                     isActive(item.href) ? "text-navy-600" : "text-ink"
                   }`}
                 >
                   {item.label}
                   {item.mega && <ChevronDown size={15} className="transition-transform group-hover:rotate-180" />}
                   <span
-                    className={`absolute -bottom-0.5 left-3.5 right-3.5 h-[3px] rounded-full bg-navy-600 transition-transform duration-300 ${
+                    className={`absolute -bottom-0.5 left-3 right-3 h-[3px] rounded-full bg-navy-600 transition-transform duration-300 ${
                       isActive(item.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                     }`}
                   />
@@ -112,12 +165,10 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-4">
-            <Link href="/tour-packages" className="hidden items-center gap-2 text-[15px] font-medium text-ink hover:text-navy-600 lg:flex">
+            <Link href="/tour-packages" className="hidden items-center gap-2 text-[15px] font-medium text-ink hover:text-navy-600 lg:flex xl:hidden">
               <Heart size={20} /> Wishlist
             </Link>
-            <button className="hidden items-center gap-2 rounded-xl border-2 border-navy-700 px-4 py-2.5 text-sm font-semibold text-navy-700 transition hover:bg-navy-700 hover:text-white sm:flex">
-              <User size={18} /> Login / Sign Up
-            </button>
+            <AccountButton />
             <button
               className="grid h-11 w-11 place-items-center rounded-xl bg-saffron-500 text-white xl:hidden"
               aria-label={mobile ? "Close menu" : "Open menu"}
@@ -168,10 +219,23 @@ export default function Header() {
               </div>
             ))}
             <div className="mt-4 grid grid-cols-2 gap-3">
-              <Link href="/group-tours" className="btn-outline">Group Tours</Link>
-              <button className="btn-navy">
-                <User size={16} /> Login
-              </button>
+              {user ? (
+                <>
+                  <Link href="/account" className="btn-navy">
+                    <UserRound size={16} /> My Account
+                  </Link>
+                  <button className="btn-outline" onClick={logout}>
+                    <LogOut size={16} /> Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link href="/login" className="btn-navy">
+                    <User size={16} /> Login
+                  </Link>
+                  <Link href="/signup" className="btn-outline">Sign Up</Link>
+                </>
+              )}
             </div>
           </nav>
         </div>

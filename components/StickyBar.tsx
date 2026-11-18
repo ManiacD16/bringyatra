@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowUp, Landmark, MapPinned, Phone, Plane, Send, TentTree } from "lucide-react";
+import { ArrowUp, Landmark, MapPinned, Phone, Send, TentTree, Users } from "lucide-react";
 import { useEnquiry } from "./Enquiry";
 import { site } from "@/lib/data";
 
 const quick = [
-  { label: "India Tours", href: "/tour-packages", Icon: MapPinned },
+  { label: "Domestic Tours", href: "/tour-packages", Icon: MapPinned },
   { label: "Odisha Special", href: "/odisha-tours", Icon: Landmark },
-  { label: "Weekend Trips", href: "/weekend-getaways", Icon: TentTree },
-  { label: "Book Flights", href: "/flights", Icon: Plane },
+  { label: "Holidays", href: "/holidays", Icon: TentTree },
+  { label: "Group Tours", href: "/group-tours", Icon: Users },
 ];
 
 /** Fixed bottom quick-links bar with floating call / plan-trip buttons. */

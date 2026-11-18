@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Briefcase, Church, GraduationCap, Heart, PartyPopper, Users } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import PackageCard from "@/components/PackageCard";
-import { EnquiryForm } from "@/components/Enquiry";
+import TripEnquirySection from "@/components/TripEnquiry";
 import { byCategory } from "@/lib/data";
 import { img } from "@/lib/images";
 
@@ -73,23 +72,7 @@ export default function GroupToursPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20" id="enquire">
-        <div className="container grid gap-10 lg:grid-cols-2">
-          <Reveal variant="left" className="relative min-h-[360px] overflow-hidden rounded-[2rem]">
-            <Image src={img("friends", 1200)} alt="A group of friends smiling together" fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent" />
-            <div className="absolute bottom-0 p-8 text-white">
-              <p className="font-display text-4xl font-bold text-amber-400">500+</p>
-              <p className="text-white/85">groups travelled with BringYatra last year</p>
-            </div>
-          </Reveal>
-          <Reveal variant="right" className="rounded-3xl border border-slate-100 bg-white p-7 shadow-lift sm:p-9">
-            <h2 className="text-2xl font-bold text-ink">Request a Group Quote</h2>
-            <p className="mb-6 mt-1 text-sm text-slate-600">Our group desk will reply within 24 hours.</p>
-            <EnquiryForm subject="Group tour" />
-          </Reveal>
-        </div>
-      </section>
+      <TripEnquirySection variant="group" />
 
       <section className="bg-slate-50 py-16">
         <div className="container">

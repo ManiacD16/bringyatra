@@ -688,26 +688,13 @@ export type NavItem = {
 
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Flights", href: "/flights" },
-  { label: "Hotels", href: "/hotels" },
-  { label: "Buses", href: "/buses" },
   {
-    label: "Tour Packages",
+    label: "Domestic Tours",
     href: "/tour-packages",
     mega: [
       {
-        heading: "Popular Packages",
+        heading: "Popular Tours",
         links: packages.slice(0, 6).map((p) => ({ label: p.title, href: `/tour-packages/${p.slug}` })),
-      },
-      {
-        heading: "Odisha Special",
-        links: [
-          { label: "Puri - Bhubaneswar - Konark", href: "/tour-packages/puri-bhubaneswar-konark" },
-          { label: "Grand Odisha Tour", href: "/tour-packages/grand-odisha" },
-          { label: "Jagannath Puri Darshan", href: "/tour-packages/jagannath-puri-darshan" },
-          { label: "Chilika & Gopalpur Coast", href: "/tour-packages/chilika-gopalpur" },
-          { label: "All Odisha Tours", href: "/odisha-tours" },
-        ],
       },
       {
         heading: "By Region",
@@ -716,13 +703,14 @@ export const nav: NavItem[] = [
           { label: "South India", href: "/tour-packages?region=South" },
           { label: "East India", href: "/tour-packages?region=East" },
           { label: "West India", href: "/tour-packages?region=West" },
-          { label: "Customized Group Tours", href: "/group-tours" },
+          { label: "All Domestic Tours", href: "/tour-packages" },
+          { label: "Enquire for a Domestic Tour", href: "/tour-packages#enquire" },
         ],
       },
     ],
   },
   {
-    label: "Holidays",
+    label: "Holiday Packages",
     href: "/holidays",
     mega: [
       {
@@ -741,9 +729,29 @@ export const nav: NavItem[] = [
           { label: "Beach Holidays", href: "/tour-packages?category=beach" },
           { label: "Heritage Tours", href: "/tour-packages?category=heritage" },
           { label: "Adventure Tours", href: "/tour-packages?category=adventure" },
+          { label: "Enquire for a Holiday", href: "/holidays#enquire" },
         ],
       },
     ],
   },
+  {
+    label: "Odisha Special",
+    href: "/odisha-tours",
+    mega: [
+      {
+        heading: "Odisha Packages",
+        links: [
+          { label: "Puri - Bhubaneswar - Konark", href: "/tour-packages/puri-bhubaneswar-konark" },
+          { label: "Grand Odisha Tour", href: "/tour-packages/grand-odisha" },
+          { label: "Jagannath Puri Darshan", href: "/tour-packages/jagannath-puri-darshan" },
+          { label: "Chilika & Gopalpur Coast", href: "/tour-packages/chilika-gopalpur" },
+          { label: "All Odisha Tours", href: "/odisha-tours" },
+          { label: "Enquire for an Odisha Tour", href: "/odisha-tours#enquire" },
+        ],
+      },
+    ],
+  },
+  { label: "Group Tours", href: "/group-tours" },
+  { label: "Weekend Getaways", href: "/weekend-getaways" },
   { label: "Offers", href: "/offers" },
 ];
