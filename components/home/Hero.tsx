@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import SearchWidget from "../SearchWidget";
+// BOOKING SEARCH (temporarily hidden): uncomment this import and the <SearchWidget /> block below to restore it.
+// import SearchWidget from "../SearchWidget";
+import HeroIntro from "./HeroIntro";
 import { img, type ImageKey } from "@/lib/images";
 
 const slides: { image: ImageKey; caption: string }[] = [
@@ -65,8 +67,15 @@ export default function Hero() {
           ))}
         </div>
 
+        {/* BOOKING SEARCH (temporarily hidden): to restore, uncomment this block and the import above,
+            then delete the <HeroIntro /> block below.
         <div className="mt-10 sm:mt-14">
           <SearchWidget />
+        </div>
+        */}
+
+        <div className="mt-10 sm:mt-14">
+          <HeroIntro />
         </div>
       </div>
     </section>
