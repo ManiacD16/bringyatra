@@ -150,11 +150,11 @@ export default function SearchWidget({ initial = "flights", showTabs = true }: {
           </button>
         </div>
 
-        {searched && (
+        {/* {searched && (
           <p className="mt-4 rounded-xl bg-navy-50 px-4 py-3 text-sm text-navy-800" role="status">
             This is a demo UI. Live {tab} inventory will appear here once the booking engine is connected.
           </p>
-        )}
+        )} */}
       </form>
     </div>
   );

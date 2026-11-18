@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter, Youtube } from "lucide-react";
+import { Facebook, FileText, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter, Youtube } from "lucide-react";
 import Logo from "./Logo";
 import { packages, site } from "@/lib/data";
+import { legalPages } from "@/lib/legal";
 
 const cols = [
   {
@@ -12,6 +13,8 @@ const cols = [
       { label: "Offers & Deals", href: "/offers" },
       { label: "Customer Reviews", href: "/about#reviews" },
       { label: "Careers", href: "/about" },
+      { label: "Terms & Conditions", href: "/legal/terms-and-conditions" },
+      { label: "Refund Policy", href: "/legal/refund-policy" },
     ],
   },
   {
@@ -121,15 +124,22 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="container relative flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row">
-        <p>
+      {/* StickyBar hides the floating call / plan-trip buttons while this row is on screen */}
+      <div id="footer-legal" className="container relative border-t border-white/10 pt-6">
+        <nav aria-label="Policies" className="flex flex-wrap justify-center gap-2.5 lg:justify-start">
+          {legalPages.map((p) => (
+            <Link
+              key={p.slug}
+              href={`/legal/${p.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-medium text-white/85 transition hover:border-saffron-400 hover:bg-saffron-500 hover:text-white"
+            >
+              <FileText size={14} /> {p.title}
+            </Link>
+          ))}
+        </nav>
+        <p className="mt-5 text-center text-xs leading-relaxed lg:text-left">
           © {new Date().getFullYear()} {site.legalName}. BringYatra is a brand of {site.legalName}. All rights reserved.
         </p>
-        <div className="flex gap-5">
-          <a href="#" className="hover:text-white">Terms &amp; Conditions</a>
-          <a href="#" className="hover:text-white">Privacy Policy</a>
-          <a href="#" className="hover:text-white">Cancellation Policy</a>
-        </div>
       </div>
     </footer>
   );

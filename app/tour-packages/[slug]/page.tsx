@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BedDouble, Bus, CalendarDays, Camera, Check, ChevronDown, Coffee, MapPin, ShieldCheck, Star, UserCheck, X } from "lucide-react";
 import PageHero from "@/components/PageHero";
@@ -153,7 +154,10 @@ export default async function PackageDetail({ params }: Params) {
               <p className="mt-1 text-xs text-slate-500">per person on twin sharing</p>
               <span className="mt-3 inline-block rounded-lg bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">You save {discount(p)}% · {inr(p.oldPrice - p.price)}</span>
               <EnquiryButton subject={p.title} className="btn-primary mt-5 w-full py-3.5 text-base">Book Now</EnquiryButton>
-              <p className="mt-3 flex items-center justify-center gap-1.5 text-xs text-slate-500"><ShieldCheck size={14} className="text-teal-600" /> Pay just 25% to confirm · Free cancellation*</p>
+              <p className="mt-3 flex items-center justify-center gap-1.5 text-xs text-slate-500">
+                <ShieldCheck size={14} className="text-teal-600" /> Pay just 25% to confirm ·{" "}
+                <Link href="/legal/cancellation-policy" className="underline decoration-dotted hover:text-navy-600">Cancellation policy</Link>
+              </p>
             </div>
             <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-card">
               <h3 className="mb-4 text-lg font-semibold text-ink">Customise this trip</h3>

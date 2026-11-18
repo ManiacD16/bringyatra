@@ -46,7 +46,7 @@ export default function Hero() {
             <span className="h-2 w-2 animate-pulse rounded-full bg-amber-400" /> {slides[i].caption}
           </p>
           <h1 className="text-[2.6rem] font-bold leading-[1.08] tracking-tight drop-shadow-lg sm:text-6xl lg:text-7xl">
-            Explore India <span className="bg-gradient-to-r from-amber-400 to-saffron-400 bg-clip-text italic text-transparent">&amp; Beyond</span>
+            Explore India <span className="bg-gradient-to-r from-amber-400 to-saffron-400 bg-clip-text pe-[0.15em] italic text-transparent [-webkit-box-decoration-break:clone] [box-decoration-break:clone]">&amp; Beyond</span>
           </h1>
           <p className="mt-5 max-w-lg text-base text-white/90 sm:text-xl">
             Discover handpicked destinations, amazing deals and unforgettable experiences.

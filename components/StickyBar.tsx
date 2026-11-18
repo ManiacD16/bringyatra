@@ -19,6 +19,8 @@ export default function StickyBar() {
   const [showTop, setShowTop] = useState(false);
   const [showCta, setShowCta] = useState(false);
 
+  const [footerVisible, setFooterVisible] = useState(false);
+
   useEffect(() => {
     const onScroll = () => {
       setShowTop(window.scrollY > 900);
@@ -29,11 +31,20 @@ export default function StickyBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Get out of the way of the footer's policy links and copyright.
+  useEffect(() => {
+    const legal = document.getElementById("footer-legal");
+    if (!legal) return;
+    const io = new IntersectionObserver(([e]) => setFooterVisible(e.isIntersecting), { rootMargin: "0px 0px 120px 0px" });
+    io.observe(legal);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <>
       <div
         className={`fixed bottom-[76px] right-4 z-40 flex flex-col items-end gap-2.5 transition-all duration-500 md:bottom-[84px] md:right-6 md:flex-row md:items-center ${
-          showCta ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
+          showCta && !footerVisible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
         }`}
       >
         <button

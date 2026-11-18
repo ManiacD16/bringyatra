@@ -14,16 +14,16 @@
       "port": 3210
     },
     {
-      "name": "bringyatra-prod",
-      "runtimeExecutable": "npm",
+      "name": "bringyatra-static",
+      "runtimeExecutable": "python3",
       "runtimeArgs": [
-        "run",
-        "start",
-        "--",
-        "-p",
-        "3211"
+        "-m",
+        "http.server",
+        "3212",
+        "--directory",
+        "build"
       ],
-      "port": 3211
+      "port": 3212
     }
   ]
 }

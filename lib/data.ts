@@ -668,7 +668,7 @@ export const faqs = [
   },
   {
     q: "What is your cancellation policy?",
-    a: "Cancellations made 30+ days before departure get a full refund minus a small processing fee. Closer-in cancellations follow the hotel and airline policies, which we explain clearly before you pay.",
+    a: "Cancel 30 or more days before departure and you get a full refund minus a 5% processing fee. Charges rise closer to the travel date, and flights and hotels follow their own rules. See our Cancellation and Refund policies for the full details.",
   },
   {
     q: "Are flights included in the package price?",
