@@ -15,11 +15,11 @@ import { AuthProvider } from "@/components/Auth";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.bringyatra.com"),
   title: {
-    default: "BringYatra | Tour Packages, Holidays, Flights, Buses & Hotels in India",
+    default: "BringYatra | Tour Packages, Holidays & Pilgrimage Tours in India",
     template: "%s | BringYatra",
   },
   description:
-    "BringYatra: Bringing Journeys to Life. Domestic tour packages, weekend getaways, family & honeymoon holidays, pilgrimage tours, Odisha special packages, customized group tours, and flight, bus & hotel bookings.",
+    "BringYatra: Bringing Journeys to Life. Domestic tour packages, weekend getaways, family & honeymoon holidays, pilgrimage tours, Odisha special packages, and customized group tours.",
   keywords: ["tour packages", "Odisha tour", "Puri Konark tour", "honeymoon packages", "pilgrimage tours", "weekend getaways", "BringYatra"],
   openGraph: {
     title: "BringYatra | Bringing Journeys to Life",

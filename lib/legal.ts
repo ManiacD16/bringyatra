@@ -28,7 +28,7 @@ export const legalPages: LegalPage[] = [
     slug: "terms-and-conditions",
     title: "Terms & Conditions",
     short: "Terms",
-    summary: "The rules for using the BringYatra website and for booking tours, flights, buses and hotels with us.",
+    summary: "The rules for using the BringYatra website and for booking tours and holidays with us.",
     sections: [
       {
         id: "introduction",
@@ -65,7 +65,7 @@ export const legalPages: LegalPage[] = [
             "Package prices are per person on twin sharing basis unless stated otherwise, and are subject to availability at the time of confirmation.",
             "Prices may change because of Supplier fare revisions, fuel surcharges, taxes or government levies until the booking is fully paid and confirmed.",
             "Tour packages are confirmed on payment of an advance (usually 25% of the package cost). The balance must be paid at least 15 days before departure, or as stated in your booking confirmation.",
-            "Flights, bus tickets and prepaid hotels must be paid in full at the time of booking.",
+            // BOOKINGS (temporarily hidden): "Flights, bus tickets and prepaid hotels must be paid in full at the time of booking.",
             "GST and other applicable taxes are charged as per prevailing law and shown on your invoice.",
             "If a payment fails or is reversed, the booking is not confirmed and may be released without notice.",
           ],
@@ -225,7 +225,7 @@ export const legalPages: LegalPage[] = [
     slug: "cancellation-policy",
     title: "Cancellation Policy",
     short: "Cancellation",
-    summary: "How to cancel a tour package, flight, bus or hotel booking, and the charges that apply.",
+    summary: "How to cancel a tour package or holiday booking, and the charges that apply.",
     sections: [
       {
         id: "how-to-cancel",
@@ -255,34 +255,35 @@ export const legalPages: LegalPage[] = [
           ],
         ],
       },
-      {
-        id: "flights",
-        heading: "3. Flights",
-        body: [
-          [
-            "Flight cancellations follow the fare rules of the airline. Cancellation charges levied by the airline are deducted from the refund.",
-            "BringYatra's service or convenience fee is non-refundable.",
-            "To cancel close to departure, cancel at least 4 hours before the scheduled departure time, or as the airline specifies. Otherwise the ticket may be treated as a no-show, and only statutory taxes may be refundable.",
-          ],
-        ],
-      },
-      {
-        id: "buses",
-        heading: "4. Bus Tickets",
-        body: [
-          "Bus ticket cancellations follow the bus operator's policy shown at the time of booking. Charges usually increase closer to departure, and tickets generally cannot be cancelled after the scheduled departure time.",
-        ],
-      },
-      {
-        id: "hotels",
-        heading: "5. Hotels",
-        body: [
-          "Hotel bookings follow the cancellation policy shown for the selected room and rate plan. Non-refundable rates cannot be cancelled or changed. For pay-at-hotel bookings, the hotel may charge a no-show fee as per its policy.",
-        ],
-      },
+      // BOOKINGS (temporarily hidden): standalone flight, bus & hotel cancellation rules. Uncomment and renumber headings to restore.
+      // {
+      //   id: "flights",
+      //   heading: "3. Flights",
+      //   body: [
+      //     [
+      //       "Flight cancellations follow the fare rules of the airline. Cancellation charges levied by the airline are deducted from the refund.",
+      //       "BringYatra's service or convenience fee is non-refundable.",
+      //       "To cancel close to departure, cancel at least 4 hours before the scheduled departure time, or as the airline specifies. Otherwise the ticket may be treated as a no-show, and only statutory taxes may be refundable.",
+      //     ],
+      //   ],
+      // },
+      // {
+      //   id: "buses",
+      //   heading: "4. Bus Tickets",
+      //   body: [
+      //     "Bus ticket cancellations follow the bus operator's policy shown at the time of booking. Charges usually increase closer to departure, and tickets generally cannot be cancelled after the scheduled departure time.",
+      //   ],
+      // },
+      // {
+      //   id: "hotels",
+      //   heading: "5. Hotels",
+      //   body: [
+      //     "Hotel bookings follow the cancellation policy shown for the selected room and rate plan. Non-refundable rates cannot be cancelled or changed. For pay-at-hotel bookings, the hotel may charge a no-show fee as per its policy.",
+      //   ],
+      // },
       {
         id: "by-us",
-        heading: "6. Cancellation by BringYatra or a Supplier",
+        heading: "3. Cancellation by BringYatra or a Supplier",
         body: [
           "If we or a Supplier cancel a confirmed service for reasons within our control, you will receive a full refund of the amount paid for that service, or an alternative of equal or higher value if you prefer.",
           "If a service is cancelled because of force majeure events such as natural disasters, extreme weather, landslides, epidemics, government orders or civil unrest, we will pass on whatever refund or credit the Suppliers give us, after deducting non-recoverable costs.",
@@ -290,14 +291,14 @@ export const legalPages: LegalPage[] = [
       },
       {
         id: "amendments",
-        heading: "7. Changes to a Booking",
+        heading: "4. Changes to a Booking",
         body: [
           "Date changes, name corrections and other amendments are subject to availability and Supplier charges, plus a BringYatra amendment fee where applicable. Moving a package to a later date within 30 days is treated as a cancellation and rebooking if the original Suppliers cannot carry it forward.",
         ],
       },
       {
         id: "refunds",
-        heading: "8. Refunds",
+        heading: "5. Refunds",
         body: ["The refund amount, timelines and payment mode are explained in our Refund Policy."],
       },
     ],
@@ -336,9 +337,10 @@ export const legalPages: LegalPage[] = [
             rows: [
               ["Failed / duplicate transaction", "2 working days", "5 – 7 working days"],
               ["Tour package cancellation", "7 working days", "7 – 14 working days"],
-              ["Flight cancellation", "On receipt from airline", "7 – 21 working days"],
-              ["Bus ticket cancellation", "2 working days", "5 – 7 working days"],
-              ["Hotel cancellation", "On receipt from hotel", "7 – 14 working days"],
+              // BOOKINGS (temporarily hidden): standalone booking refund timelines
+              // ["Flight cancellation", "On receipt from airline", "7 – 21 working days"],
+              // ["Bus ticket cancellation", "2 working days", "5 – 7 working days"],
+              // ["Hotel cancellation", "On receipt from hotel", "7 – 14 working days"],
             ],
           },
           "*After processing, the time it takes for the money to reach your account depends on your bank or card issuer.",

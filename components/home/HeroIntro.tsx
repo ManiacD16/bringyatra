@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, BedDouble, Bus, Landmark, Mountain, Palmtree, Phone, Plane, Users } from "lucide-react";
+// BOOKINGS (temporarily hidden): add BedDouble and Plane back to this import when restoring the booking tiles.
+import { ArrowRight, Bus, Landmark, MapPinned, Mountain, Palmtree, Phone, TentTree, Users } from "lucide-react";
 import EnquiryButton from "../EnquiryButton";
 import { site } from "@/lib/data";
 
@@ -8,8 +9,11 @@ const services = [
   { label: "Holidays", sub: "Family & honeymoon", href: "/holidays", Icon: Palmtree },
   { label: "Pilgrimage Tours", sub: "Char Dham, Puri & more", href: "/holidays/pilgrimage", Icon: Landmark },
   { label: "Group Tours", sub: "10 to 500+ travellers", href: "/group-tours", Icon: Users },
-  { label: "Flight Booking", sub: "Best domestic fares", href: "/flights", Icon: Plane },
-  { label: "Bus & Hotels", sub: "Volvo, sleeper & stays", href: "/hotels", Icon: BedDouble },
+  { label: "Odisha Special", sub: "Puri, Konark & Chilika", href: "/odisha-tours", Icon: MapPinned },
+  { label: "Weekend Getaways", sub: "2–3 day short trips", href: "/weekend-getaways", Icon: TentTree },
+  // BOOKINGS (temporarily hidden): restore these two tiles (and remove the two above) to show bookings again.
+  // { label: "Flight Booking", sub: "Best domestic fares", href: "/flights", Icon: Plane },
+  // { label: "Bus & Hotels", sub: "Volvo, sleeper & stays", href: "/hotels", Icon: BedDouble },
 ];
 
 /** Hero card introducing BringYatra as a tour & travels company (stands in for the booking search box). */
@@ -21,10 +25,10 @@ export default function HeroIntro() {
           <Bus size={16} /> BringYatra Tour &amp; Travels
         </p>
         <h2 className="mt-2 text-2xl font-bold leading-tight text-ink sm:text-[1.75rem]">
-          Tours, holidays &amp; travel bookings, <span className="text-navy-600">all in one place</span>
+          Tours, holidays &amp; pilgrimages, <span className="text-navy-600">all in one place</span>
         </h2>
         <p className="mt-2 text-sm text-slate-600">
-          Tell us where you want to go. Our travel experts plan the itinerary, hotels, transport and sightseeing for you.
+          Tell us where you want to go. Our travel experts plan the itinerary, stays, transport and sightseeing for you.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <EnquiryButton className="btn-primary">

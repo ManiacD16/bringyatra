@@ -9,10 +9,12 @@ import { img, type ImageKey } from "@/lib/images";
 
 const offers: { title: string; text: string; code: string; tag: string; valid: string; image: ImageKey; href: string }[] = [
   { title: "Winter Sale: up to 25% OFF", text: "On Kashmir, Kerala and Odisha tour packages booked before 31 Dec.", code: "WINTER25", tag: "Holidays", valid: "Valid till 31 Dec 2026", image: "kashmir", href: "/tour-packages" },
-  { title: "Flat ₹1,500 OFF on Flights", text: "On domestic round-trip flights booked via BringYatra.", code: "FLYBY1500", tag: "Flights", valid: "Valid till 15 Jan 2027", image: "flightWing", href: "/flights" },
+  // BOOKINGS (temporarily hidden): { title: "Flat ₹1,500 OFF on Flights", text: "On domestic round-trip flights booked via BringYatra.", code: "FLYBY1500", tag: "Flights", valid: "Valid till 15 Jan 2027", image: "flightWing", href: "/flights" },
   { title: "Honeymoon Special", text: "Free candlelight dinner and room upgrade on honeymoon packages.", code: "FOREVER", tag: "Honeymoon", valid: "Valid till 28 Feb 2027", image: "honeymoon", href: "/holidays/honeymoon" },
   { title: "Rath Yatra Early Bird", text: "Pre-book Puri stays for Rath Yatra 2027 and save 20%.", code: "JAGANNATH20", tag: "Odisha Special", valid: "Valid till 31 Mar 2027", image: "puri", href: "/odisha-tours" },
-  { title: "10% OFF on Bus Tickets", text: "Up to ₹250 off on AC sleeper and Volvo buses.", code: "BUSY10", tag: "Buses", valid: "Valid till 31 Jan 2027", image: "bus", href: "/buses" },
+  // BOOKINGS (temporarily hidden): { title: "10% OFF on Bus Tickets", text: "Up to ₹250 off on AC sleeper and Volvo buses.", code: "BUSY10", tag: "Buses", valid: "Valid till 31 Jan 2027", image: "bus", href: "/buses" },
+  { title: "Weekend Getaway Deal", text: "Flat ₹1,000 off on any 2–3 day weekend package, including Puri, Rishikesh, Coorg and more.", code: "WEEKEND1000", tag: "Weekend Getaways", valid: "Valid till 31 Jan 2027", image: "rishikesh", href: "/weekend-getaways" },
+  { title: "Char Dham Yatra 2027 Early Bird", text: "Book your 2027 Char Dham yatra early and save 15%, with priority helicopter assistance.", code: "YATRA15", tag: "Pilgrimage", valid: "Valid till 28 Feb 2027", image: "kedarnath", href: "/holidays/pilgrimage" },
   { title: "Group of 10+? Save 15%", text: "Extra group discount on any customized group tour.", code: "SQUAD15", tag: "Group Tours", valid: "Always on", image: "group", href: "/group-tours" },
 ];
 

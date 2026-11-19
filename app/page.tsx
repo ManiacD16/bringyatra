@@ -223,7 +223,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Bookings band */}
+      {/* BOOKINGS (temporarily hidden): to show the "Flight, Bus & Hotel Bookings" section again, remove this comment wrapper.
       <section className="py-16 sm:py-20">
         <div className="container">
           <SectionHeading center eyebrow="One stop for travel" title="Flight, Bus &" highlight="Hotel Bookings" subtitle="Best fares and verified stays, with no hidden charges." />
@@ -254,6 +254,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Group tours CTA with parallax background */}
       <section className="relative overflow-hidden">

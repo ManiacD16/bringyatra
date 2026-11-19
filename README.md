@@ -41,7 +41,7 @@ Upload it to the root of your domain (e.g. `bringyatra.com`), not a subfolder.
 | `/group-tours` | Customized group tours + quote form |
 | `/weekend-getaways` | Getaways by city + weekend packages |
 | `/holidays` | Holiday themes (family, honeymoon, pilgrimage …) |
-| `/flights`, `/buses`, `/hotels` | Booking pages with search, popular routes and stays |
+| ~~`/flights`, `/buses`, `/hotels`~~ | **Temporarily hidden.** The booking pages live in `app/_flights`, `app/_buses`, `app/_hotels`. Rename them without the `_` and search the code for `BOOKINGS (temporarily hidden)` to restore them |
 | `/offers`, `/about`, `/contact` | Offers with copyable codes, about, and contact with map |
 | `/legal/terms-and-conditions`, `/legal/privacy-policy`, `/legal/cancellation-policy`, `/legal/refund-policy`, `/legal/legal-policy` | Policy pages (content in `lib/legal.ts`) |
 

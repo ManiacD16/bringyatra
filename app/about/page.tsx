@@ -47,7 +47,7 @@ export default function AboutPage() {
                 BringYatra is the travel brand of {site.legalName}, built on one belief: every journey should be as joyful as the destination. We are a full-service travel company covering 120+ destinations across India.
               </p>
               <p>
-                Today our team of 60+ travel experts plans domestic tour packages, weekend getaways, family and honeymoon holidays, religious and pilgrimage tours, and customized group tours, along with flight, bus and hotel bookings. Odisha is our speciality, and our Odisha special packages are designed with local experts on the ground.
+                Today our team of 60+ travel experts plans domestic tour packages, weekend getaways, family and honeymoon holidays, religious and pilgrimage tours, and customized group tours. Odisha is our speciality, and our Odisha special packages are designed with local experts on the ground.
               </p>
             </Reveal>
           </div>

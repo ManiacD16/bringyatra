@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container relative grid gap-10 py-14 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
+      <div className="container relative grid gap-10 py-14 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           <Logo light />
           <p className="mt-5 max-w-xs text-sm leading-relaxed">

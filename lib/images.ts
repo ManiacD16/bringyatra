@@ -60,6 +60,20 @@ const ids = {
   resortPool: "1520250497591-112f2f40a3f4",
   bus: "1771260262905-69d9989f180e",
   hotelRoom: "1667403206415-0e51a54727d4",
+  mussoorie: "1547106365-bb4b17f50a15",
+  mussoorieHills: "1591388667055-530d5f4defb3",
+  nainital: "1706468630738-b0ded0c5fc25",
+  nainitalLake: "1601622256416-d7f757f99eb2",
+  pondicherry: "1677951221673-09be408d2ddf",
+  pondicherryCoast: "1597073642928-48c0971f7ded",
+  lonavala: "1618805714320-f8825019c1be",
+  lonavalaHills: "1589286875480-743411b84f53",
+  ooty: "1638886540342-240980f60d25",
+  ootyTown: "1589136777351-fdc9c9cab193",
+  mysore: "1659126574791-13313aa424bd",
+  mysoreDay: "1759675408229-c613d95b1d0e",
+  hampi: "1616606484004-5ef3cc46e39d",
+  hampiRuins: "1722934804353-0d9f6a55ab5e",
 } as const;
 
 export type ImageKey = keyof typeof ids;
